@@ -8,16 +8,6 @@ variable "softcat_managed" {
   }
 }
 
-variable "softcat_monitor" {
-  type        = bool
-  description = "Is Softcat Monitoring Enabled"
-
-  validation {
-    condition     = contains([true, false], var.softcat_monitor)
-    error_message = "Valid values for var: softcat_monitor are (true, false)."
-  }
-}
-
 variable "softcat_environment" {
   type        = string
   description = "Environment type. For example: dev, staging, non-prod, prod"
