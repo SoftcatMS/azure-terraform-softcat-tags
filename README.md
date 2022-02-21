@@ -1,4 +1,4 @@
-# azure-terraform-softcat-tags
+# terraform-azure-softcat-tags
 
 Mandatory tags required for a Softcat build i nAzure
 

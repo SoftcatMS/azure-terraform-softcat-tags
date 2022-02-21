@@ -1,5 +1,5 @@
 module "tagging" {
-  source = "git@github.com:SoftcatMS/azure-terraform-softcat-tags"
+  source = "git@github.com:SoftcatMS/terraform-azure-softcat-tags"
 
   softcat_managed     = "IaC"
   softcat_environment = "Dev"
