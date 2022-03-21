@@ -8,7 +8,7 @@ module "tagging" {
 
 
 resource "azurerm_resource_group" "rg-softcat-tag-test1-basic" {
-  name     = "rg-softcat-tag-test-basic"
+  name     = "rg-softcat-tag-test1-basic"
   location = "UK South"
 
   tags = module.tagging.softcat_tags

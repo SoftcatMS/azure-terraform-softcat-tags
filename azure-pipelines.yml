@@ -41,23 +41,17 @@ stages:
         inputs:
           terraformVersion: 'latest'
 
-
-      - bash: |
-          terraform init
-        workingDirectory: 'tests/basic/'
-        displayName: Terraform Init 
-
-      # - task: TerraformTaskV2@2
-      #   displayName: Init Basic
-      #   inputs:
-      #     provider: 'azurerm'
-      #     command: 'init'
-      #     workingDirectory: 'tests/basic/'
-      #     backendServiceArm: 'sandbox-terraform-testing-spn'
-      #     # backendAzureRmResourceGroupName: 'Terraform-Storage-accountRG'
-      #     # backendAzureRmStorageAccountName: 'softcattfmodulestate'
-      #     # backendAzureRmContainerName: 'tf-modules-azure-recovery-services-vault'
-      #     # backendAzureRmKey: 'terraform.tfstate'
+      - task: TerraformTaskV2@2
+        displayName: Init Basic
+        inputs:
+          provider: 'azurerm'
+          command: 'init'
+          workingDirectory: 'tests/basic/'
+          backendServiceArm: 'sandbox-terraform-testing-spn'
+          backendAzureRmResourceGroupName: 'rg-terraform-modules-state'
+          backendAzureRmStorageAccountName: 'softcatmodulestate'
+          backendAzureRmContainerName: 'tf-modules-azure-softcat-tagging-basic'
+          backendAzureRmKey: 'terraform.tfstate'
 
       - task: TerraformTaskV2@2
         displayName: Validate Basic
@@ -97,7 +91,7 @@ stages:
       - task: AzureKeyVault@2
         displayName: Get credentials from Key Vault
         inputs:
-          azureSubscription: ' Managed Azure Terraform Testing'
+          azureSubscription: 'sandbox-terraform-testing-spn'
           KeyVaultName: 'kvpipelinetestingsecrets'
           SecretsFilter: '*'
           RunAsPreJob: true
@@ -140,10 +134,10 @@ stages:
           command: 'init'
           workingDirectory: 'tests/basic/'
           backendServiceArm: 'sandbox-terraform-testing-spn'
-          # backendAzureRmResourceGroupName: 'Terraform-Storage-accountRG'
-          # backendAzureRmStorageAccountName: 'softcattfmodulestate'
-          # backendAzureRmContainerName: 'tf-modules-azure-softcat-tagging-basic'
-          # backendAzureRmKey: 'terraform.tfstate'
+          backendAzureRmResourceGroupName: 'rg-terraform-modules-state'
+          backendAzureRmStorageAccountName: 'softcatmodulestate'
+          backendAzureRmContainerName: 'tf-modules-azure-softcat-tagging-basic'
+          backendAzureRmKey: 'terraform.tfstate'
 
       - task: TerraformTaskV2@2
         displayName: Destroy Basic
