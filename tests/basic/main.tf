@@ -21,7 +21,7 @@ resource "azurerm_resource_group" "rg-softcat-tag-test2-basic" {
 
   tags = merge(module.tagging.softcat_tags,
     {
-      Softcat_Environment = "Overwrite"
+      softcat_environment = "Overwrite"
     }
   )
 }
