@@ -1,9 +1,9 @@
 module "tagging" {
   source = "../../"
 
-  softcat_managed     = "IaC"
-  softcat_environment = "Dev"
-  softcat_build_type  = "Greenfield"
+  softcat_managed_type = "IaC"
+  softcat_environment  = "Dev"
+  softcat_build_type   = "Greenfield"
 }
 
 
@@ -21,7 +21,7 @@ resource "azurerm_resource_group" "rg-softcat-tag-test2-basic" {
 
   tags = merge(module.tagging.softcat_tags,
     {
-      Softcat_Environment = "Overwrite"
+      softcat_environment = "Overwrite"
     }
   )
 }

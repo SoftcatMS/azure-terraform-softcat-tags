@@ -1,9 +1,9 @@
-variable "softcat_managed" {
+variable "softcat_managed_type" {
   type        = string
   description = "Is this managed via Console or IaC"
 
   validation {
-    condition     = contains(["console", "Console", "iac", "IaC"], var.softcat_managed)
+    condition     = contains(["console", "Console", "iac", "IaC"], var.softcat_managed_type)
     error_message = "Valid values for var: softcat_managed are (console, Console, iac, IaC)."
   }
 }
