@@ -18,7 +18,7 @@ variable "softcat_build_type" {
   description = "Is Environment Brownfield or Greenfield"
 
   validation {
-    condition     = contains(["brownfield", "Bownfield", "greenfield", "Greenfield"], var.softcat_build_type)
+    condition     = contains(["brownfield", "Brownfield", "greenfield", "Greenfield"], var.softcat_build_type)
     error_message = "Valid values for var: softcat_build_type are (brownfield, Brownfield, greenfield, Greenfield)."
   }
 }
