@@ -44,7 +44,7 @@ Azure
 | <a name="input_softcat_build_type"></a> [softcat\_build\_type](#input\_softcat\_build\_type) | Is Environment Brownfield or Greenfield | `string` | n/a | yes |
 | <a name="input_softcat_environment"></a> [softcat\_environment](#input\_softcat\_environment) | Environment type. For example: dev, staging, non-prod, prod | `string` | n/a | yes |
 | <a name="input_softcat_managed"></a> [softcat\_managed](#input\_softcat\_managed) | Is this managed via Console or IaC | `string` | n/a | yes |
-| <a name="input_softcat_monitor"></a> [softcat\_monitor](#input\_softcat\_monitor) | Is Softcat Monitoring Enabled | `bool` | n/a | yes |
+| <a name="input_softcat_monitoring"></a> [softcat\_monitor](#input\_softcat\_monitor) | Is Softcat Monitoring Enabled | `string` | 'default' | yes |
 
 ## Outputs
 
