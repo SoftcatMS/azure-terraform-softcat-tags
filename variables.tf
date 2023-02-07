@@ -22,3 +22,9 @@ variable "softcat_build_type" {
     error_message = "Valid values for var: softcat_build_type are (brownfield, Brownfield, greenfield, Greenfield)."
   }
 }
+
+variable "softcat_monitoring" {
+  type        = string
+  description = "Enable Softcat Monitoring"
+  default     = "default"
+}
